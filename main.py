@@ -20,7 +20,7 @@ Bootstrap(app)
 ##CONNECT TO DB
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL',  "sqlite:///blog.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL',  "sqlite:///user.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -54,7 +54,7 @@ class BlogPost(db.Model):
 class CommentsTable( db.Model):
     __tablename__ = "comment"
     id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.Text(250), nullable=False)
+    text = db.Column(db.Text, nullable=False)
     author_id = db.Column(db.Integer, ForeignKey('users.id'))
 
     comment_author = relationship('Users', back_populates="comments")

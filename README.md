@@ -1,5 +1,4 @@
-# Shruti-Blog
-A Blog website with Flask 
-Below is the link to the website:
 
-https://shruti-blog.herokuapp.com/
+## A Blog website with Flask. Below is the link to the website:
+
+# [Shruti's Blogs](https://shruti-blog.herokuapp.com/)
